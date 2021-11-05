@@ -4,19 +4,20 @@ import java.util.Locale;
 
 import sweeper.Box;
 import sweeper.Coord;
+import sweeper.Ranges;
 
 public class JavaSweeper extends JFrame {
     private JPanel panel;
     private final int IMAGE_SIZE = 50;
-    private final int COLUMNS = 15;
-    private final int ROWS = 1;
-
+    private final int COLUMNS = 9;
+    private final int ROWS = 9;
 
     public static void main(String[] args) {
         new JavaSweeper();
     }
 
     private JavaSweeper() {
+        Ranges.setSize(COLUMNS, ROWS);
         setImages();
         initPanel();
         initFrame();
@@ -27,29 +28,28 @@ public class JavaSweeper extends JFrame {
             @Override
             public void paintComponent(Graphics g) {
                 super.paintComponent(g);
-
-                for (Box box: Box.values()) {
-                    Coord coord = new Coord(box.ordinal(), 0);
-                    g.drawImage((Image) box.image, coord.x * IMAGE_SIZE, coord.y * IMAGE_SIZE, this);
+                for (Coord coord: Ranges.getAllCoords()) {
+                    g.drawImage((Image) Box.BOMB.image, coord.x * IMAGE_SIZE, coord.y * IMAGE_SIZE, this);
                 }
             }
         };
-        panel.setPreferredSize(new Dimension(COLUMNS * IMAGE_SIZE, ROWS * IMAGE_SIZE));
+        panel.setPreferredSize(new Dimension(Ranges.getSize().x * IMAGE_SIZE, Ranges.getSize().y * IMAGE_SIZE));
         add(panel);
     }
 
     private void initFrame() {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setTitle("Java Sweeper");
-        setVisible(true);
         setResizable(false);
         pack();
+        setVisible(true);
         setLocationRelativeTo(null);
     }
 
     private void setImages() {
         for (Box box : Box.values()) {
             box.image = getImage(box.name().toLowerCase());
+            setIconImage(getImage("icon"));
         }
     }
 
