@@ -30,7 +30,7 @@ public class JavaSweeper extends JFrame {
             @Override
             public void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                for (Coord coord: Ranges.getAllCoords()) {
+                for (Coord coord : Ranges.getAllCoords()) {
                     g.drawImage((Image) game.getBox(coord).image, coord.x * IMAGE_SIZE, coord.y * IMAGE_SIZE, this);
                 }
             }
@@ -55,7 +55,7 @@ public class JavaSweeper extends JFrame {
         }
     }
 
-    private Image getImage (String name) {
+    private Image getImage(String name) {
         String fileName = "source/img/" + name + ".png";
         ImageIcon icon = new ImageIcon(fileName);
         // required  ImageIcon icon = new ImageIcon(getClass().getResource(fileName)); ---> but doesn't work //

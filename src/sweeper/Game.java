@@ -7,7 +7,7 @@ public class Game {
         Ranges.setSize(new Coord(columns, rows));
     }
 
-    public void start () {
+    public void start() {
         bombMap = new Matrix(Box.ZERO);
         bombMap.set(new Coord(0, 0), Box.BOMB);
         bombMap.set(new Coord(0, 1), Box.NUM1);

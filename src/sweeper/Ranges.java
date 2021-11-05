@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Ranges {
     public static Coord size;
-    private static ArrayList<Coord>  allCoords;
+    private static ArrayList<Coord> allCoords;
 
     public static Coord getSize() {
         return size;
@@ -21,13 +21,12 @@ public class Ranges {
         }
     }
 
-    public static ArrayList<Coord> getAllCoords () {
+    public static ArrayList<Coord> getAllCoords() {
         return allCoords;
     }
 
-    public static boolean inRange ( Coord coord) {
-        return coord.x >=0 && coord.x < size.x &&
-               coord.y >=0 && coord.y < size.y;
+    public static boolean inRange(Coord coord) {
+        return coord.x >= 0 && coord.x < size.x &&
+                coord.y >= 0 && coord.y < size.y;
     }
-
 }
