@@ -16,7 +16,6 @@ class Bomb {
             placeBomb();
         }
         placeBomb();
-
     }
 
     Box get(Coord coord) {

@@ -36,11 +36,11 @@ public class Ranges {
         return new Coord(RANDOM.nextInt(size.x), RANDOM.nextInt(size.y));
     }
 
-    static ArrayList<Coord> getCoordsAround ( Coord coord) {
+    static ArrayList<Coord> getCoordsAround(Coord coord) {
         Coord around;
         ArrayList<Coord> list = new ArrayList<>();
-        for (int x = coord.x - 1; x <= coord.x + 1  ; x++) {
-            for (int y = coord.y - 1; y <= coord.y ; y++) {
+        for (int x = coord.x - 1; x <= coord.x + 1; x++) {
+            for (int y = coord.y - 1; y <= coord.y; y++) {
                 if (inRange(around = new Coord(x, y))) {
                     if (!around.equals(coord)) {
                         list.add(around);
@@ -49,5 +49,9 @@ public class Ranges {
             }
         }
         return list;
+    }
+
+    public static int getSquare() {
+        return size.x * size.y;
     }
 }
