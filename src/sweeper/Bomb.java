@@ -1,7 +1,6 @@
 package sweeper;
 
 class Bomb {
-
     private Matrix bombMap;
     private int totalBombs;
 
@@ -50,7 +49,6 @@ class Bomb {
         int maxBomb = Ranges.getSize().x * Ranges.getSize().y / 2;
         if (totalBombs > maxBomb) {
             totalBombs = maxBomb;
-
         }
     }
 }

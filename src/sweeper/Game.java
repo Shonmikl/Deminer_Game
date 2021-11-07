@@ -59,8 +59,8 @@ public class Game {
         if (Box.BOMB != bomb.get(coord)) {
             if (bomb.get(coord).getNumber() == flag.getCountOfFlaggetBoxesAround()) {
                 for (Coord around : Ranges.getAllCoords()) {
-                    if(flag.get(coord) == Box.CLOSED) {
-                        openBox(coord);
+                    if(flag.get(around) == Box.CLOSED) {
+                        openBox(around);
                     }
                 }
             }
