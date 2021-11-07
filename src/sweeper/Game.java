@@ -56,7 +56,7 @@ public class Game {
     private void openBombs(Coord bombedCoord) {
         flag.setBombedToBox(bombedCoord);
         for (Coord coord : Ranges.getAllCoords()) {
-            if ( bomb.get(coord) == Box.BOMB) {
+            if (bomb.get(coord) == Box.BOMB) {
                 flag.setOpenedToClosedBox(coord);
             } else {
                 flag.setNobombToFlaggedBomb(coord);
@@ -86,8 +86,8 @@ public class Game {
         flag.toggleFlaggedToBox(coord);
     }
 
-    private boolean isGameOver () {
-        if(GameState.PLAYED != state) {
+    private boolean isGameOver() {
+        if (GameState.PLAYED != state) {
             start();
             return true;
         }

@@ -41,11 +41,8 @@ class Flag {
 
     void toggleFlaggedToBox(Coord coord) {
         switch (flagMap.get(coord)) {
-            case FLAGGED:
-                setClosedToBox(coord);
-                break;
-            case CLOSED:
-                setFlaggedToBox(coord);
+            case FLAGGED -> setClosedToBox(coord);
+            case CLOSED -> setFlaggedToBox(coord);
         }
     }
 
@@ -64,7 +61,7 @@ class Flag {
     }
 
     void setOpenedToClosedBox(Coord coord) {
-        if(Box.CLOSED == flagMap.get(coord)) {
+        if (Box.CLOSED == flagMap.get(coord)) {
             flagMap.set(coord, Box.OPENED);
         }
     }

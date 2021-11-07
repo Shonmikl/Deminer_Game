@@ -15,7 +15,7 @@ public class Ranges {
     public static void setSize(Coord size) {
         Ranges.size = size;
         // not this? //
-        allCoords = new ArrayList<Coord>();
+        allCoords = new ArrayList<>();
         for (int x = 0; x < size.x; x++) {
             for (int y = 0; y < size.y; y++) {
                 allCoords.add(new Coord(x, y));

@@ -1,7 +1,5 @@
 package sweeper;
 
-import java.util.Objects;
-
 public class Coord {
     public int x;
     public int y;
