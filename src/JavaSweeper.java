@@ -12,13 +12,14 @@ public class JavaSweeper extends JFrame {
     private final int COLUMNS = 9;
     private final int ROWS = 9;
     private Game game;
+    private final int BOMBS = 10;
 
     public static void main(String[] args) {
         new JavaSweeper();
     }
 
     private JavaSweeper() {
-        game = new Game(COLUMNS, ROWS);
+        game = new Game(COLUMNS, ROWS, BOMBS);
         game.start();
         setImages();
         initPanel();
