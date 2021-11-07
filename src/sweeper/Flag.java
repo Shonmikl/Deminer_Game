@@ -2,7 +2,6 @@ package sweeper;
 
 class Flag {
     private Matrix flagMap;
-
     private int totalFlagged;
     private int totalClosed;
 
@@ -51,13 +50,11 @@ class Flag {
             if (Box.CLOSED == flagMap.get(coord)) {
                 setFlaggedToBox(coord);
             }
-
         }
     }
 
     public void setBombedToBox(Coord coord) {
         flagMap.set(coord, Box.BOMBED);
-
     }
 
     void setOpenedToClosedBox(Coord coord) {
