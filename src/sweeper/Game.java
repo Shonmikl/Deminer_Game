@@ -42,6 +42,8 @@ public class Game {
     private void openBox(Coord coord) {
         switch (flag.get(coord)) {
             case OPENED:
+                setOpenedToClosedBoxesAroundNumber(coord);
+                break;
             case FLAGGED:
                 break;
             case CLOSED:
@@ -50,6 +52,18 @@ public class Game {
                     case BOMB -> openBombs(coord);
                     default -> flag.setOpenedToBox(coord);
                 }
+        }
+    }
+
+    private void setOpenedToClosedBoxesAroundNumber(Coord coord) {
+        if (Box.BOMB != bomb.get(coord)) {
+            if (bomb.get(coord).getNumber() == flag.getCountOfFlaggetBoxesAround()) {
+                for (Coord around : Ranges.getAllCoords()) {
+                    if(flag.get(coord) == Box.CLOSED) {
+                        openBox(coord);
+                    }
+                }
+            }
         }
     }
 
