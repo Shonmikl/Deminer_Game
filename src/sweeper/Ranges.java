@@ -31,7 +31,7 @@ public class Ranges {
         return coord.x >= 0 && coord.x < size.x && coord.y >= 0 && coord.y < size.y;
     }
 
-    static Coord getRandomCoord() {
+    static Coord getRandomCoordinates() {
         return new Coord(RANDOM.nextInt(size.x), RANDOM.nextInt(size.y));
     }
 

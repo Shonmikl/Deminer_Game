@@ -1,12 +1,12 @@
+import sweeper.Coord;
+import sweeper.Game;
+import sweeper.Ranges;
+import sweeper.Box;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-
-import sweeper.Box;
-import sweeper.Coord;
-import sweeper.Game;
-import sweeper.Ranges;
 
 public class JavaSweeper extends JFrame {
     private JPanel panel;
@@ -16,7 +16,7 @@ public class JavaSweeper extends JFrame {
     private final int COLUMNS = 9;
     private final int ROWS = 9;
     private final Game GAME;
-    private final int BOMBS = 10;
+    private final int BOMBS = 1;
 
     public static void main(String[] args) {
         new JavaSweeper();

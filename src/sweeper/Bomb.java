@@ -26,7 +26,7 @@ class Bomb {
 
     private void placeBomb() {
         while (true) {
-            Coord coord = Ranges.getRandomCoord();
+            Coord coord = Ranges.getRandomCoordinates();
             if (Box.BOMB == bombMap.get(coord)) {
                 continue;
             }

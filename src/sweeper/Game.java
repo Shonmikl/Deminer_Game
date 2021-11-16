@@ -67,13 +67,13 @@ public class Game {
         }
     }
 
-    private void openBombs(Coord bombedCoord) {
-        flag.setBombedToBox(bombedCoord);
+    private void openBombs(Coord bombedCoordinate) {
+        flag.setBombedToBox(bombedCoordinate);
         for (Coord coord : Ranges.getAllCoords()) {
             if (bomb.get(coord) == Box.BOMB) {
                 flag.setOpenedToClosedBox(coord);
             } else {
-                flag.setNobombToFlaggedBomb(coord);
+                flag.setNoBombToFlaggedBomb(coord);
             }
         }
         state = GameState.BOMBED;
@@ -88,7 +88,6 @@ public class Game {
     }
 
     private void openBoxesAroundZero(Coord coord) {
-        System.out.print("[" + coord.x + ":" + coord.y + "]");
         flag.setOpenedToBox(coord);
         for (Coord around : Ranges.getCoordsAround(coord)) {
             openBox(around);
