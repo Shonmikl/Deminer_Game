@@ -86,9 +86,10 @@ public class JavaSweeper extends JFrame {
     }
 
     private Image getImage(String name) {
-        String fileName = "source/img/" + name + ".png";
+        String fileName = "img" + name + ".png";
         ImageIcon icon = new ImageIcon(fileName);
         // required  ImageIcon icon = new ImageIcon(getClass().getResource(fileName)); ---> but doesn't work //
+
         return icon.getImage();
     }
 
