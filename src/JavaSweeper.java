@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.Objects;
 
 public class JavaSweeper extends JFrame {
     private JPanel panel;
@@ -86,10 +87,9 @@ public class JavaSweeper extends JFrame {
     }
 
     private Image getImage(String name) {
-        String fileName = "img" + name + ".png";
-        ImageIcon icon = new ImageIcon(fileName);
-        // required  ImageIcon icon = new ImageIcon(getClass().getResource(fileName)); ---> but doesn't work //
-
+        String fileName = "/img/" + name + ".png";
+        //ImageIcon icon = new ImageIcon(fileName);
+        ImageIcon icon = new ImageIcon(Objects.requireNonNull(getClass().getResource(fileName)));
         return icon.getImage();
     }
 
