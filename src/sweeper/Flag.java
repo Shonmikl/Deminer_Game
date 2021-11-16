@@ -69,7 +69,7 @@ class Flag {
         }
     }
 
-    int getCountOfFlaggetBoxesAround() {
+    int getCountOfFlaggedBoxesAround() {
         int count = 0;
         for (Coord coord : Ranges.getAllCoords()) {
             if (flagMap.get(coord) == Box.FLAGGED) {

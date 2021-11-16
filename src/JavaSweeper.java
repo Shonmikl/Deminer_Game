@@ -101,7 +101,7 @@ public class JavaSweeper extends JFrame {
             case PLAYED:
             default:
                 if (GAME.getTotalFlagged() == 0) {
-                    return "Welcome ti The Game";
+                    return "Welcome to The Game";
                 } else return "Flagged!!! " + GAME.getTotalFlagged() + " of "
                         + GAME.getTotalBombs() + " bombs.";
         }
